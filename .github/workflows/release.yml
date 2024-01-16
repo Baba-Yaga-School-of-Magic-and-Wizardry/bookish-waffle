@@ -1,0 +1,51 @@
+name: Detect Release
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - 'main'
+
+jobs:
+  version-check-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './package-lock.json'
+
+      - name: Compare Versions
+        id: compare-versions
+        run: |
+          PACKAGE_VERSION=$(node -pe "require('./package.json').version")
+          LATEST_RELEASE=$(git describe --abbrev=0 --tags)
+
+          echo "CANDIDATE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
+          echo "CURRENT_VERSION=${LATEST_RELEASE}" >> $GITHUB_OUTPUT
+
+      - name: Check and Create Release
+        #        if: ${{ steps.compare-versions.outputs.CANDIDATE_VERSION >= steps.compare-versions.outputs.CURRENT_VERSION }}
+        id: check-and-create-release
+        run: |
+          echo "::debug::CANDIDATE_VERSION=${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}"
+          echo "::debug::CURRENT_VERSION=${{ steps.compare-versions.outputs.CURRENT_VERSION }}"
+          if [[ "${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}" > "${{ steps.compare-versions.outputs.CURRENT_VERSION }}" ]]; then
+            echo "Creating a new release for version ${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}."
+            # gh release create v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }} -t "Release v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}"
+          else
+            echo "No new release needed. "
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Display error log
+        if: ${{ failure() }}
+        run: cat /home/runner/.npm/_logs/*.log
