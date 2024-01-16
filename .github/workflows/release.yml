@@ -40,7 +40,7 @@ jobs:
           echo "::debug::CURRENT_VERSION=${{ steps.compare-versions.outputs.CURRENT_VERSION }}"
           if [[ "${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}" > "${{ steps.compare-versions.outputs.CURRENT_VERSION }}" ]]; then
             echo "Creating a new release for version ${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}."
-            # gh release create v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }} -t "Release v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}"
+            gh release create v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }} -t "Automated release v${{ steps.compare-versions.outputs.CANDIDATE_VERSION }}"
           else
             echo "No new release needed. "
           fi
