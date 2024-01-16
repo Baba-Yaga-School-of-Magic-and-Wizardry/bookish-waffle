@@ -9,7 +9,7 @@ const App: Component = () => {
       <header class={styles.header}>
         <img src={logo} class={styles.logo} alt="logo" />
         <p>
-          Edit and save to reload.
+          Edit like a king and save to reload.
         </p>
         <a
           class={styles.link}
