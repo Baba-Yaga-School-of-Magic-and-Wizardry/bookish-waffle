@@ -1,7 +1,7 @@
 ---
-name: Custom issue template
-about: All purpose issue template, remove sections as you see fit
-title: 'Short Description'
+name: Basic Issue
+about: All purpose issue template
+title: 'Open an issue'
 ---
 
 # Context
@@ -52,14 +52,14 @@ No issue should be complete without having all the questions being answered
 checklist all the steps needed to solve the issue
 associate a ticket to some of them if they seem to be candidadte for a good PR
 
-- \[ ] Make sure all the metadata is set
-  - \[ ] Assignee is set
-  - \[ ] Relevant labels are set
-  - \[ ] The project is the right one
-  - \[ ] The milestone is set
-- \[ ] Tests have been created gh-?
-- \[ ] All the tests run green
-- \[ ] Component in storybook gh-?
+- [ ] Make sure all the metadata is set
+  - [ ] Assignee is set
+  - [ ] Relevant labels are set
+  - [ ] The project is the right one
+  - [ ] The milestone is set
+- [ ] Tests have been created gh-?
+- [ ] All the tests run green
+- [ ] Component in storybook gh-?
 
 `gh-?` act as a reminder that you need to create a ticket for that point and paste the number here.
 Issue can not be closed until the whole checklist have been checked.
