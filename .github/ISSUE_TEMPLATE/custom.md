@@ -2,7 +2,7 @@
 name: Basic Issue
 about: All purpose issue template
 title: 'Open an issue'
-assignees: @me
+assignees: me
 ---
 
 # Context
