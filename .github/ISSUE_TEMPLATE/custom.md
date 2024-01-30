@@ -2,6 +2,7 @@
 name: Basic Issue
 about: All purpose issue template
 title: 'Open an issue'
+assignees: @me
 ---
 
 # Context
@@ -63,3 +64,18 @@ associate a ticket to some of them if they seem to be candidadte for a good PR
 
 `gh-?` act as a reminder that you need to create a ticket for that point and paste the number here.
 Issue can not be closed until the whole checklist have been checked.
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
