@@ -2,7 +2,8 @@
 name: Basic Issue
 about: All purpose issue template
 title: 'Open an issue'
-assignees: me
+assignees: xbbyhiras
+projects: 'Baba-Yaga-School-of-Magic-and-Wizardry/1'
 ---
 
 # Context

@@ -2,8 +2,10 @@ name: Bug Report
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug", "triage"]
+projects: 
+  - Baba-Yaga-School-of-Magic-and-Wizardry/1
 assignees:
-  - me
+  - xbbyhiras
 body:
   - type: markdown
     attributes:
