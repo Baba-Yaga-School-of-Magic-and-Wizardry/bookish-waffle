@@ -3,7 +3,7 @@ name: Basic Issue
 about: All purpose issue template
 title: 'Open an issue'
 assignees: xbbyhiras
-projects: 'Baba-Yaga-School-of-Magic-and-Wizardry/1'
+projects: Baba-Yaga-School-of-Magic-and-Wizardry/2
 ---
 
 # Context
