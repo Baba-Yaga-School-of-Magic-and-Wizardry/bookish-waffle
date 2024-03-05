@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/Baba-Yaga-School-of-Magic-and-Wizardry/bookish-waffle/compare/v3.0.0...v3.1.0) (2024-03-05)
+
+
+### Features
+
+* try again ([8b6bf76](https://github.com/Baba-Yaga-School-of-Magic-and-Wizardry/bookish-waffle/commit/8b6bf76c2b79a816d83ff79cbb86b79f2e649eff))
+
 ## [3.0.0](https://github.com/Baba-Yaga-School-of-Magic-and-Wizardry/bookish-waffle/compare/v2.0.0...v3.0.0) (2024-03-01)
 
 
