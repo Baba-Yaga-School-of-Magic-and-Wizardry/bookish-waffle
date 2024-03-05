@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Update
         run: |
-          printf "\ntoken=${{ secrets.RELEASE_PLEASE_TOKEN }}" > .npmrc
+          printf "\ntoken=${{ secrets.RELEASE_PLEASE_TOKEN }}" >> .npmrc
           cat .npmrc
       - uses: google-github-actions/release-please-action@cc61a07e2da466bebbc19b3a7dd01d6aecb20d1e
         with:
